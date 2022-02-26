@@ -1,0 +1,74 @@
+{% include 'header.html' %}
+
+<!-- Main Contents -->
+<div class="contents-body fadeUp">
+
+
+    <!--  Gallery Section -->
+    <section id="gallery-section">
+    <!-- Section Header -->
+    <h1 class="header">ユニフォームを作ろう。</h1>
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+                <div class="container-fluid gallery">
+                  <div class="carousel-item active">
+                    <img class="gallery-img" src="static/images/ryota-main.jpg" alt="gallery">
+                    <h2 class="gallery-text ">ANTHEM SC 公式戦ユニフォーム [HOME]</h2>
+                  </div>
+                </div>
+            </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+        </div>
+
+      </section>
+
+    <!-- Order Section -->
+    <section id="order-section">
+      <!-- Section Header -->
+        <h1 class="header ">オーダーはこちら。</h1>
+        <div class="container-fluid">
+                <div class="order-text-area">
+                    <h1 class="order-text-header">ユニ上下セット ¥4,500（税別）〜</h1>
+                    <p class="order-text-second-header">納期：　約3週間</p>
+                    <p>AMBICIÓNでは、唯一無二の品質と低価格を実現するために、</p>
+                    <p>
+                        <a href="{{ url_for('sample') }}" target="_blank" rel="noopener noreferrer" class="design-data-link">
+                        デザインデータ
+                        </a>
+                        などのご準備はお客様にお願いしております。</p>
+                    <a href="#about-section">
+                        <p>（データをもとに印刷する昇華式ユニフォームになります。）</p>
+                    </a>
+                    <p>プロも利用している品質の完全オリジナルユニフォームを</p>
+                    <p>どこよりも安くお届けします。</p>
+                     <a href="{{ url_for('order') }}">
+                        <button type="button" class="order-btn btn btn-primary ">見積もり</button>
+                    </a>
+                </div>
+            </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section id="about-section">
+      <!-- Section Header -->
+        <h1 class="header ">AMBICIÓNとは？</h1>
+
+
+
+    </section>
+
+
+</div>
+{% include 'footer.html' %}
