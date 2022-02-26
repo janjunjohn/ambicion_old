@@ -8,7 +8,7 @@
     {% endif %}
   {% endblock %}
   {% block bg_picture %}
-    <img class="background-img container-fluid" src="static/images/ryota-with-stuff.jpg" alt="ryota and stuffs">
+    <img class="background-img container-fluid" src="{{ url_for('static', filename='/images/ryota-with-stuff.jpg') }}" alt="ryota and stuffs">
   {% endblock %}
   {% block navigation %}
     <a href="#price-nav-target">
@@ -381,7 +381,7 @@
         <div class="col-6">
           <label>ツルツル</label><br>
           <input type="radio" name="fabric" value="tsuru"><br>
-          <img class="choice-img" src="static/images/fabric-a.jpg" alt="fabric_a">
+          <img class="choice-img" src="{{ url_for('static', filename='/images/fabric-a.jpg') }}" alt="fabric_a">
           <p>伸縮性を抑え、身体へのフィット感が抜群。</p>
           <p>トッププロも使用しているため、</p>
           <p>本格的なプレーの支えとなってくれます。</p>
@@ -390,7 +390,7 @@
         <div class="col-6">
           <label>ザラザラ</label><br>
           <input type="radio" name="fabric" value="zara"><br>
-          <img class="choice-img" src="static/images/fabric-b.jpg" alt="fabric_b">
+          <img class="choice-img" src="{{ url_for('static', filename='/images/fabric-b.jpg') }}" alt="fabric_b">
           <p>高い伸縮性により、ゆったりとした着心地。</p>
           <p>肌触りがとてもきもちいい。</p>
           <p>さまざまな用途、幅広い方におすすめできます。</p>
@@ -404,24 +404,24 @@
         <div class="col-6">
           <label>ラウンドネック</label><br>
           <input type="radio" name="neck" value="round"><br>
-          <img class="choice-img" src="static/images/r.jpg" alt="fabric_a">
+          <img class="choice-img" src="{{ url_for('static', filename='/images/r.jpg') }}" alt="fabric_a">
         </div>
         <div class="col-6">
           <label>ラウンドネック ＆ スモール</label><br>
           <input type="radio" name="neck" value="round_neck"><br>
-          <img class="choice-img" src="static/images/dan_r.jpg" alt="fabric_a">
+          <img class="choice-img" src="{{ url_for('static', filename='/images/dan_r.jpg') }}" alt="fabric_a">
         </div>
       </div>
       <div class="row choice-row">
         <div class="col-6">
           <label>Vネック ＆ スモール</label><br>
           <input type="radio" name="neck" value="v_sm_neck"><br>
-          <img class="choice-img" src="static/images/eri_sm.jpg" alt="fabric_a">
+          <img class="choice-img" src="{{ url_for('static', filename='/images/eri_sm.jpg') }}" alt="fabric_a">
         </div>
         <div class="col-6">
           <label>Vネック ＆ ラージ</label><br>
           <input type="radio" name="neck" value="v_lg_neck"><br>
-          <img class="choice-img" src="static/images/eri_v.jpg" alt="fabric_a">
+          <img class="choice-img" src="{{ url_for('static', filename='/images/eri_v.jpg') }}" alt="fabric_a">
         </div>
       </div>
 
@@ -432,14 +432,12 @@
         <div class="col-6">
           <label>ハーフ</label><br>
           <input type="radio" name="sleeve" value="short"><br>
-          <img class="choice-img" src="static/images/fabric-a.jpg" alt="fabric_a">
-
-
+          <img class="choice-img" src="{{ url_for('static', filename='/images/fabric-a.jpg') }}" alt="fabric_a">
         </div>
         <div class="col-6">
           <label>ロング</label><br>
           <input type="radio" name="sleeve" value="long"><br>
-          <img class="choice-img" src="static/images/fabric-b.jpg" alt="fabric_b">
+          <img class="choice-img" src="{{ url_for('static', filename='/images/fabric-b.jpg') }}" alt="fabric_b">
         </div>
       </div>
         <div id="contact-nav-target"></div> <!-- navigation btn target -->

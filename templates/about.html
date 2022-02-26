@@ -4,7 +4,7 @@
       <h1 class="heading-text">AMBICIÓNとは？</h1>
   {% endblock %}
   {% block bg_picture %}
-    <img class="background-img container-fluid" src="static/images/stadium.jpg" alt="stadium">
+    <img class="background-img container-fluid" src="{{ url_for('static', filename='/images/stadium.jpg') }}" alt="stadium">
   {% endblock %}
   {% block navigation %}
     <a href="#price-nav-target">
