@@ -38,8 +38,8 @@ def order():
         message = request.form['free-text']
 
         charset = 'iso-2022-jp'
-        subject = '件名です'
-        contents = 'こんにちは'
+        subject = 'subject'
+        contents = 'hello'
 
 
         message = Mail(
