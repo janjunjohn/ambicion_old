@@ -1,16 +1,17 @@
 import datetime
 from flask import Flask, render_template, request
-import smtplib
+import sendgrid
+from sendgrid.helpers.mail import Mail
 from email.mime.text import MIMEText
-from email.header import Header
 import os
+
 
 app = Flask(__name__)
 year = datetime.datetime.now().year
 
-EMAIL = os.environ['PYTHON_EMAIL']
-EMAIL_PASS = os.environ['EMAIL_PASS']
+PYTHON_EMAIL = os.environ['PYTHON_EMAIL']
 AMBICION_EMAIL = os.environ['AMBICION_EMAIL']
+SENDGRID_APIKEY = os.environ['SENDGRID_APIKEY']
 
 
 @app.route('/')
@@ -37,27 +38,27 @@ def order():
         message = request.form['free-text']
 
         charset = 'iso-2022-jp'
-        msg = MIMEText(f'お名前: {username} \n'
-                       f'Email: {user_email} \n'
-                       f'ユニフォーム: {uniform} {socks} \n'
-                       f'枚数: {number} \n'
-                       f'生地: {fabric} \n'
-                       f'襟: {neck} \n'
-                       f'袖: {sleeve} \n'
-                       f'備考: {message} \n',
-                       'plain',
-                       charset
-                       )
-        msg['Subject'] = Header(f'{username} 様', charset)
+        subject = MIMEText(f'{username} 様', charset)
+        contents = MIMEText(f'お名前: {username} \n'
+                            f'Email: {user_email} \n'
+                            f'ユニフォーム: {uniform} {socks} \n'
+                            f'枚数: {number} \n'
+                            f'生地: {fabric} \n'
+                            f'襟: {neck} \n'
+                            f'袖: {sleeve} \n'
+                            f'備考: {message} \n',
+                            'plain',
+                            charset
+                            )
+        message = Mail(
+            from_email=PYTHON_EMAIL,
+            to_emails=AMBICION_EMAIL,
+            subject=subject,
+            plain_text_content=contents
+        )
+        sg = sendgrid.SendGridAPIClient(api_key=SENDGRID_APIKEY)
+        sg.send(message)
 
-        with smtplib.SMTP('smtp.gmail.com', port=587) as connection:  # choose particular mail sever and port num
-
-            connection.starttls()  # start Transport Layer Security
-            connection.login(user=EMAIL, password=EMAIL_PASS)  # login to your email account
-            connection.sendmail(from_addr=EMAIL,  # send an email
-                                to_addrs=AMBICION_EMAIL,
-                                msg=msg.as_string()
-                                )
         return render_template('order_page.html', submitted=True, username=username)
 
     return render_template('order_page.html', year=year)
