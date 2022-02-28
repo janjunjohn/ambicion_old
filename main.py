@@ -6,9 +6,10 @@ import os
 PYTHON_EMAIL = os.environ['PYTHON_EMAIL']
 AMBICION_EMAIL = os.environ['AMBICION_EMAIL']
 SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
+SECRET_KEY = os.environ['SECRET_KEY']
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'top-secret!'
+app.config['SECRET_KEY'] = SECRET_KEY
 app.config['MAIL_SERVER'] = 'smtp.sendgrid.net'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
@@ -45,15 +46,17 @@ def order():
         sleeve = request.form['form-sleeve']
         message = request.form['free-text']
 
-        charset = 'iso-2022-jp'
-        subject = 'subject'
-        contents = 'hello'
-
         msg = Message(f'{username} 様',
                       recipients=[AMBICION_EMAIL])
-        msg.body = 'テスト'
+        msg.body = f'お名前: {username} \n' \
+                   f'Email: {user_email} \n' \
+                   f'ユニフォーム: {uniform} {socks} \n' \
+                   f'枚数: {number} \n' \
+                   f'生地: {fabric} \n' \
+                   f'襟: {neck} \n' \
+                   f'袖: {sleeve} \n' \
+                   f'備考: {message} \n'
         mail.send(msg)
-
         return render_template('order_page.html', submitted=True, username=username)
 
     return render_template('order_page.html', year=year)
