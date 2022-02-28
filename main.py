@@ -11,7 +11,7 @@ year = datetime.datetime.now().year
 
 PYTHON_EMAIL = os.environ['PYTHON_EMAIL']
 AMBICION_EMAIL = os.environ['AMBICION_EMAIL']
-SENDGRID_APIKEY = os.environ['SENDGRID_APIKEY']
+SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
 
 
 @app.route('/')
@@ -48,7 +48,7 @@ def order():
             subject=subject,
             plain_text_content=contents
         )
-        sg = SendGridAPIClient(api_key=SENDGRID_APIKEY)
+        sg = SendGridAPIClient(api_key=SENDGRID_API_KEY)
         response = sg.send(message)
         print(response.status_code)
 
