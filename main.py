@@ -1,17 +1,25 @@
 import datetime
 from flask import Flask, render_template, request
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
-from email.mime.text import MIMEText
+from flask_mail import Mail, Message
 import os
-
-
-app = Flask(__name__)
-year = datetime.datetime.now().year
 
 PYTHON_EMAIL = os.environ['PYTHON_EMAIL']
 AMBICION_EMAIL = os.environ['AMBICION_EMAIL']
 SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'top-secret!'
+app.config['MAIL_SERVER'] = 'smtp.sendgrid.net'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'apikey'
+app.config['MAIL_PASSWORD'] = SENDGRID_API_KEY
+app.config['MAIL_DEFAULT_SENDER'] = PYTHON_EMAIL
+
+mail = Mail(app)  # Flask-Mail
+
+year = datetime.datetime.now().year
+
 
 
 @app.route('/')
@@ -41,16 +49,10 @@ def order():
         subject = 'subject'
         contents = 'hello'
 
-
-        message = Mail(
-            from_email=PYTHON_EMAIL,
-            to_emails=AMBICION_EMAIL,
-            subject=subject,
-            plain_text_content=contents
-        )
-        sg = SendGridAPIClient(api_key=SENDGRID_API_KEY)
-        response = sg.send(message)
-        print(response.status_code)
+        msg = Message(f'{username} 様',
+                      recipients=[AMBICION_EMAIL])
+        msg.body = 'テスト'
+        mail.send(msg)
 
         return render_template('order_page.html', submitted=True, username=username)
 
