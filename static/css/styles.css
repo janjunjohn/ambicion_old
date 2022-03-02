@@ -100,6 +100,25 @@ nav {
     opacity: 0.6;
 }
 
+.footer-icon-light {
+    color: #fff;
+}
+
+.footer-icon-dark {
+    color: #121212;
+}
+
+#twitter:hover {
+    color: #00ACEE;
+}
+
+#instagram:hover {
+    color: #DD2A7B;
+}
+
+#facebook:hover {
+    color: #3B5998;
+}
 /* Top Page ***********************************************************************************************************/
 .modal-btn {
     font-size: 2rem;
@@ -353,6 +372,10 @@ nav {
     margin-bottom: 6rem;
 }
 
+.contact-small-header {
+    margin-bottom: 5rem;
+}
+
 .selected-item {
     color: #343A40;
 }
@@ -598,7 +621,7 @@ nav {
 
     .modal-btn {
         font-size: 2rem;
-        width: 30rem;
+        width: 28rem;
 
     }
 
