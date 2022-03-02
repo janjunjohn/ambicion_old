@@ -26,6 +26,12 @@ a {
     text-decoration: none;
 }
 
+.nav-border { /* adjust navbar move */
+    width: 0;
+    margin: 6.5rem;
+    padding: 0;
+}
+
 .nav-hr {
     display: none;
 }
@@ -75,7 +81,6 @@ nav {
 
 .header {
     font-size: 6rem;
-    margin-top: 11rem;
     margin-left: 2rem;
     line-height: 1.5;
 }
@@ -86,12 +91,37 @@ nav {
 }
 
 /* Top Page ***********************************************************************************************************/
+.modal-btn {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
 
+.modal {
+    color: #121212;
+}
 
+.modal-quit {
+    font-size: 1.5rem;
+}
+
+.modal-text {
+    font-size: 1.5rem;
+    line
+}
+
+.section-btn {
+    width: 28rem;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 4.5;
+    margin: 5rem 5rem 3rem 5rem;
+    padding: 0 4rem;
+    border: 0;
+}
 /* Gallery Section ****************************************************************************************************/
 
 .gallery {
-    padding: 5rem 13rem;
+    padding: 5rem 13rem 0 13rem;
 }
 
 .gallery-img {
@@ -101,14 +131,14 @@ nav {
 }
 
 .gallery-text {
-    margin: 3rem auto 5rem auto;
+    margin: 3rem auto 0 auto;
     font-size: 2.5rem;
 }
 
 /* Order Section ****************************************************************************************************/
 
 #order-section {
-    padding: 1rem 13rem 0 13rem;
+    padding: 0rem 13rem 0 13rem;
 }
 
 .order-text-area {
@@ -128,18 +158,12 @@ nav {
     font-size: 1.8rem;
 }
 
-.order-btn {
-    width: 28rem;
-    font-size: 2rem;
-    font-weight: bold;
-    line-height: 4.5;
-    margin: 3rem 5rem 3rem 5rem;
-    padding: 0 4rem;
-    border: 0;
-}
-
 /* About Section ****************************************************************************************************/
-
+.youtube-intro {
+    width: 50rem;
+    height: 30rem;
+    margin: 0;
+}
 /* Section Pages ******************************************************************************************************/
 
 .white-page {
@@ -331,6 +355,36 @@ nav {
     padding: 1rem 2rem;
     margin: 3rem;
 }
+
+/* About Page *********************************************************************************************************/
+
+.greeting-container {
+    margin: 4rem 0 8rem 0;
+}
+
+.text-header {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.section-img {
+    width: 80%;
+    margin-bottom: 3rem;
+    border: solid 1rem #121212;
+}
+
+.section-text {
+    line-height: 2;
+}
+
+.youtube-about {
+    width: 50rem;
+    height: 30rem;
+    margin: 0;
+    border: solid 1rem #121212;
+}
+
+
 /* Mobile Friendly ****************************************************************************************************/
 
 @media screen and (max-width: 990px) {  /* tablet */
@@ -352,7 +406,6 @@ nav {
 
     .header {
         font-size: 5rem;
-        margin-top: 12rem;
     }
 
     .small-header {
@@ -394,6 +447,15 @@ nav {
     display: block;
     width: 100%;
     color: #121212;
+    }
+
+    .modal-text {
+    font-size: 2rem;
+    line
+    }
+
+    .modal-quit {
+    font-size: 2rem;
     }
 
     .gallery-img {
@@ -484,6 +546,9 @@ nav {
         margin: 3rem;
     }
 
+    .section-img {
+    margin-bottom: 6rem;
+    }
 }
 
 @media screen and (max-width: 450px) {  /* smart-phone */

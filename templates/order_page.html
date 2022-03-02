@@ -25,6 +25,8 @@
   {% block contents %}
   <!-- Price Section -->
     <section>
+      <span id="price-nav-target"></span>
+      <hr class="nav-border">
 
       <h1 class="header">見積もりは1分で。</h1>
       <hr>
@@ -364,13 +366,14 @@
         });
         </script>
       </div>
-        <div id="choice-nav-target"></div> <!-- navigation btn target -->
 
     </section>
 
-
     <!-- Choice Section -->
     <section>
+      <span id="choice-nav-target"></span> <!-- navigation btn target -->
+      <hr class="nav-border">
+
       <h1 id="fab-selector" class="header">予算は決まりました。<br>あとは選ぶだけ。</h1>
       <hr class="inner-border">
       <h2 class="choice-header">ファブリック</h2>
@@ -440,14 +443,15 @@
           <img class="choice-img" src="{{ url_for('static', filename='/images/fabric-b.jpg') }}" alt="fabric_b">
         </div>
       </div>
-        <div id="contact-nav-target"></div> <!-- navigation btn target -->
-
       </form>
 
     </section>
 
     <!-- Contact Section -->
     <section>
+      <span id="contact-nav-target"></span> <!-- navigation btn target -->
+      <hr class="nav-border">
+
       <h1 class="header">あなたのメール、<br>お待ちしております。</h1>
       <hr>
       <p>こちらのメールで、注文が確定することはないのでご安心ください。<br>

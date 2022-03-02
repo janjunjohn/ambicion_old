@@ -35,25 +35,25 @@
 
     <!-- Order Section -->
     <section id="order-section">
-      <!-- Section Header -->
-        <h1 class="header ">オーダーはこちら。</h1>
+    <span id="order-nav-target"></span>
+    <hr class="nav-border">
+
+        <!-- Section Header -->
+        <h1 class="header">オーダーはこちら。</h1>
         <div class="container-fluid">
                 <div class="order-text-area">
                     <h1 class="order-text-header">ユニ上下セット ¥4,500（税別）〜</h1>
                     <p class="order-text-second-header">納期：　約3週間</p>
                     <p>AMBICIÓNでは、唯一無二の品質と低価格を実現するために、</p>
-                    <p>
-                        <a href="{{ url_for('sample') }}" target="_blank" rel="noopener noreferrer" class="design-data-link">
-                        デザインデータ
-                        </a>
-                        などのご準備はお客様にお願いしております。</p>
-                    <a href="#about-section">
-                        <p>（データをもとに印刷する昇華式ユニフォームになります。）</p>
-                    </a>
-                    <p>プロも利用している品質の完全オリジナルユニフォームを</p>
-                    <p>どこよりも安くお届けします。</p>
+                    <p>デザインデータなどのご準備は、お客様にお願いしております。</p>
+                    <div>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="modal-btn btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#sample-modal">
+                          デザインデータとは？
+                        </button>
+                    </div>
                      <a href="{{ url_for('order') }}">
-                        <button type="button" class="order-btn btn btn-primary ">見積もり</button>
+                        <button type="button" class="section-btn btn btn-primary ">見積もり</button>
                     </a>
                 </div>
             </div>
@@ -62,13 +62,26 @@
 
     <!-- About Section -->
     <section id="about-section">
-      <!-- Section Header -->
-        <h1 class="header ">AMBICIÓNとは？</h1>
+    <span id="about-nav-target"></span>
+    <hr class="nav-border">
 
-
+        <!-- Section Header -->
+        <h1 class="header">AMBICIÓNとは？</h1>
+        <div class="container-fluid">
+            <div class="order-text-area">
+                <h2 class="small-header">現役のプロサッカー選手が立ち上げた <br>　スリランカ発のアパレルブランド。</h2>
+                <!-- youtube player -->
+                <iframe class="youtube-intro" src="https://www.youtube.com/embed/oH4Qk8RqQ20"
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+                <br>
+                <a href="{{ url_for('about') }}">
+                    <button type="button" class="section-btn btn btn-primary ">詳しく</button>
+                </a>
+            </div>
+        </div>
 
     </section>
-
 
 </div>
 {% include 'footer.html' %}

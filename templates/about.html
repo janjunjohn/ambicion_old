@@ -7,18 +7,95 @@
     <img class="background-img container-fluid" src="{{ url_for('static', filename='/images/stadium.jpg') }}" alt="stadium">
   {% endblock %}
   {% block navigation %}
-    <a href="#price-nav-target">
-        <div class="nav-btn">始まり</div>
+    <a href="#greeting-nav-target">
+        <div class="nav-btn">グリーティング</div>
     </a>
-    <a href="#choice-nav-target">
-        <div class="nav-btn">品質</div>
+    <a href="#product-nav-target">
+        <div class="nav-btn">ファクトリー</div>
     </a>
-    <a href="#order-nav-target">
+    <a href="#about-gallery-nav-target">
         <div class="nav-btn">会社情報</div>
     </a>
   {% endblock %}
 
 {% block contents %}
+<body class="fadeUp">
+
+<section>
+    <span id="greeting-nav-target"></span>
+    <hr class="nav-border">
+
+    <h1 class="header">代表あいさつ。</h1>
+    <hr>
+    <div class="greeting-container row container-fluid">
+        <div class="col-lg-6">
+            <img class="section-img" src="{{ url_for('static', filename='/images/ryota_bay.jpg') }}" alt="ryota bay">
+        </div>
+        <div class="section-text col-lg-6">
+            <h1 class="text-header">はじめまして！</h1>
+            <p class="section-text">
+                旅するサッカー選手、林　遼太です。<br>
+                現在も現役のプロサッカー選手であり、<br>
+                AMBICIÓNを立ち上げた張本人です。<br>
+                きっかけは、 <br>僕がスリランカのSEA HAWKS FCに所属したことから。 <br>
+                スリランカという国は、実は衣類産業が盛んで、<br>高い技術を持った工場が多い国です。<br>
+                そして偶然出会った１つの工場。<br>その品質の高さと、働く人々の暖かさに心を動かされました。<br><br>
+                「こんなに素晴らしいユニフォームたちを、<br>スリランカのなかだけにとどめておくのは、もったいない！」<br>
+                この情熱を彼らにぶつけました。
+            </p>
+
+        </div>
+    </div>
+
+    <div class="greeting-container row container-fluid">
+
+        <div class="col-lg-6 order-lg-2">
+            <img class="section-img" src="{{ url_for('static', filename='/images/stuff.jpg') }}" alt="stuff">
+        </div>
+
+        <div class="section-text col-lg-6 order-lg-1">
+            <h1 class="text-header">日本、そして世界へ！</h1>
+            <p class="section-text">
+                写真は工場を運営するスミス夫妻と僕です。<br>
+                彼らもまた、自分達の製品を世界に届けたいという<br>
+                熱い志をもっていました。<br>
+                一致した僕らの志（アンビシオン）を胸に、 <br>AMBICIÓNを立ち上げることを決心しました。 <br><br>
+                「新しいサッカーチームのユニフォームを作りたい。」<br>
+                「チーム運営をより経済的に、でも質は落としたくない。」<br>
+                「オリジナルユニフォームで、<br>所属するサークルの気持ちを一つにしたい。」<br>
+                さまざまなみなさんの志を、<br>
+                AMBICIÓNと共に叶えましょう！<br>
+                <span id=""></span>
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+    <span id="product-nav-target"></span>
+    <hr class="nav-border">
+
+    <h1 class="header">私たちが作ります。</h1>
+    <hr>
+    <h2 class="small-header">工場の様子、スミスさんの想い。</h2>
+    <iframe class="youtube-about" width="560" height="315" src="https://www.youtube.com/embed/FSo8q9kxkPE"
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    <div class="row container-fluid">
+        <div class="col-6">
+
+        </div>
+        <div class="section-text col-6">
+
+        </div>
+    </div>
+
+</section>
+
+
+</body>
 
 
 {% endblock %}

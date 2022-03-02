@@ -22,15 +22,9 @@ mail = Mail(app)  # Flask-Mail
 year = datetime.datetime.now().year
 
 
-
 @app.route('/')
 def home():
     return render_template('index.html', year=year)
-
-
-@app.route('/ai-data-samples')
-def sample():
-    return render_template('samples.html', year=year)
 
 
 @app.route('/order', methods=['GET', 'POST'])

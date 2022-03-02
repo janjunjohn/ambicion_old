@@ -22,6 +22,42 @@
     <title>AMBICIÓN</title>
   </head>
   <body>
+   <!-- Modal -->
+  <div class="modal fade" id="sample-modal" tabindex="-1" aria-labelledby="sample-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="sample-modal-label">デザインデータとは？</h1>
+
+        </div>
+        <div class="modal-body">
+          <p class="modal-text">
+            こちらは、AMBICIÓNで作成した <br>デザインデータのサンプルたちです。<br>
+            AMBICIÓNでは、データをもとに印刷する <br>昇華式のユニフォームをお作りします。<br>
+            より画質の良いデザインやエンブレムのデータを <br>ご用意いただくと、綺麗に印刷できます。<br>
+            ご不明な点があれば、お気軽にご連絡ください。
+          </p>
+          <div class="row">
+            <img class="col-lg-4 col-md-4 col-sm-6" src="{{ url_for('static', filename='/ai_data_samples/sample1.jpg') }}" alt="ai data sample">
+            <img class="col-lg-4 col-md-4 col-sm-6" src="{{ url_for('static', filename='/ai_data_samples/sample2.jpg') }}" alt="ai data sample">
+            <img class="col-lg-4 col-md-4 col-sm-6" src="{{ url_for('static', filename='/ai_data_samples/sample3.jpg') }}" alt="ai data sample">
+            <img class="col-lg-4 col-md-4 col-sm-6" src="{{ url_for('static', filename='/ai_data_samples/sample4.jpg') }}" alt="ai data sample">
+            <img class="col-lg-4 col-md-4 col-sm-6" src="{{ url_for('static', filename='/ai_data_samples/sample5.jpg') }}" alt="ai data sample">
+            <img class="col-lg-4 col-md-4 col-sm-6" src="{{ url_for('static', filename='/ai_data_samples/sample6.jpg') }}" alt="ai data sample">
+            <img class="col-lg-4 col-md-4 col-sm-6" src="{{ url_for('static', filename='/ai_data_samples/sample7.jpg') }}" alt="ai data sample">
+            <img class="col-lg-4 col-md-4 col-sm-6" src="{{ url_for('static', filename='/ai_data_samples/sample8.jpg') }}" alt="ai data sample">
+            <img class="col-lg-4 col-md-4 col-sm-6" src="{{ url_for('static', filename='/ai_data_samples/sample9.jpg') }}" alt="ai data sample">
+            <img class="col-lg-4 col-md-4 col-sm-6" src="{{ url_for('static', filename='/ai_data_samples/sample10.jpg') }}" alt="ai data sample">
+            <img class="col-lg-4 col-md-4 col-sm-6" src="{{ url_for('static', filename='/ai_data_samples/sample11.jpg') }}" alt="ai data sample">
+            <img class="col-lg-4 col-md-4 col-sm-6" src="{{ url_for('static', filename='/ai_data_samples/sample12.jpg') }}" alt="ai data sample">
+          </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="modal-quit btn btn-primary" data-bs-dismiss="modal">とじる</button>
+      </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Navigation Bar-->
     <nav class='navbar navbar-expand-lg navbar-light fixed-top'>
@@ -35,15 +71,15 @@
       <div class="collapse navbar-collapse" id="nav-contents">
         <ul class='navbar-nav ms-auto'>
           <li class='nav-item'>
-            <a class='nav-link' href='{{ url_for("home") + "#order-section" }}'>オーダー</a>
+            <a class='nav-link' href='{{ url_for("home") + "#order-nav-target" }}'>オーダー</a>
             <hr class="nav-hr">
           </li>
           <li class='nav-item'>
-            <a class='nav-link' href='{{ url_for("home") + "#about-section" }}'>AMBICIÓNとは</a>
+            <a class='nav-link' href='{{ url_for("home") + "#about-nav-target" }}'>アバウト</a>
             <hr class="nav-hr">
           </li>
           <li class='nav-item'>
-            <a class='nav-link' href='{{ url_for("order") + "#contact-form" }}'>お問い合わせ</a>
+            <a class='nav-link' href='{{ url_for("order") + "#contact-nav-target" }}'>コンタクト</a>
           </li>
         </ul>
       </div>
