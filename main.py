@@ -22,8 +22,21 @@ mail = Mail(app)  # Flask-Mail
 year = datetime.datetime.now().year
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
+    if request.method == 'POST':
+        username = request.form['username']
+        user_email = request.form['email']
+        message = request.form['free-text']
+
+        msg = Message(f'質問：{username} 様',
+                      recipients=[AMBICION_EMAIL])
+        msg.body = f'お名前: {username} \n' \
+                   f'Email: {user_email} \n' \
+                   f'備考: {message} \n'
+        mail.send(msg)
+        return render_template('index.html', submitted=True, username=username, year=year)
+
     return render_template('index.html', year=year)
 
 
@@ -51,7 +64,7 @@ def order():
                    f'袖: {sleeve} \n' \
                    f'備考: {message} \n'
         mail.send(msg)
-        return render_template('order_page.html', submitted=True, username=username)
+        return render_template('order_page.html', submitted=True, username=username, year=year)
 
     return render_template('order_page.html', year=year)
 

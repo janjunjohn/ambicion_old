@@ -7,7 +7,11 @@
     <!--  Gallery Section -->
     <section id="gallery-section">
     <!-- Section Header -->
-    <h1 class="header">ユニフォームを作ろう。</h1>
+    {% if submitted: %}
+      <h1 class="heading-text">メール送信完了。<br>{{ username }}さん、 <br> ありがとうございます！！</h1>
+    {% else: %}
+      <h1 class="header">ユニフォームを作ろう。</h1>
+    {% endif %}
 
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 
@@ -47,8 +51,8 @@
                 <div class="order-text-area">
                     <h1 class="order-text-header">完全オリジナルデザイン <br>昇華式ユニ上下セット <br>¥4,500（税別）〜</h1>
                     <p class="order-text-second-header">納期：　約3週間</p>
-                    <p>AMBICIÓNでは、唯一無二の品質と低価格を実現するために、</p>
-                    <p>デザインデータなどのご準備は、お客様にお願いしております。</p>
+                    <p>AMBICIÓNでは、唯一無二の品質と低価格を実現するために、<br>
+                    デザインデータなどのご準備は、お客様にお願いしております。</p>
                     <div>
                         <!-- Button trigger modal -->
                         <button type="button" class="modal-btn btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#sample-modal">
@@ -83,6 +87,42 @@
                 </a>
             </div>
         </div>
+
+    </section>
+
+    <span id="contact-nav-target"></span> <!-- navigation btn target -->
+    <hr class="nav-border">
+
+
+    <!-- Contact Section -->
+    <section>
+        <h1>質問はこちらから。</h1>
+        <form class="needs-validation" action="{{ url_for('home') }}" method="post" novalidate>
+              <div class="submit-area">
+        <div class="input-group mx-auto">
+          <span class="input-group-text"><i class="fa-solid fa-user text-light"></i></span>
+          <input type="text" class="form-input form-control" name="username" placeholder="お名前" required>
+          <div class="invalid-feedback">
+            名前を入力してください。
+          </div>
+        </div>
+
+        <div class="input-group mx-auto">
+          <span class="input-group-text"><i class="fa-solid fa-envelope text-light"></i></span>
+          <input type="email" class="form-input form-control" name="email" placeholder="返信用メールアドレス" required>
+          <div class="invalid-feedback">
+            メールアドレスを入力してください。
+          </div>
+        </div>
+
+        <div class="input-group mx-auto">
+          <span class="input-group-text"><i class="fa-solid fa-pen-to-square text-light"></i></span>
+          <textarea rows="3" maxlength="250" class="form-input form-control" name="free-text" placeholder="フリースペース"></textarea>
+        </div>
+
+        <button class="contact-btn btn btn-primary btn-lg" type="submit">メールを送信</button>
+      </div>
+      </form>
 
     </section>
 

@@ -162,6 +162,7 @@ nav {
 
 .order-text-header {
     margin-bottom: 1rem;
+    line-height: 1.4;
 }
 
 .order-text-second-header {
@@ -183,6 +184,18 @@ nav {
     height: 30rem;
     margin: 0;
 }
+
+/* Contact Section ****************************************************************************************************/
+.contact-btn {
+    width: 25rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    line-height: 4;
+    margin: 2rem 2rem 4rem 2rem;
+    padding: 0 4rem;
+    border: 0;
+}
+
 /* Section Pages ******************************************************************************************************/
 
 .white-page {
@@ -584,7 +597,9 @@ nav {
     }
 
     .modal-btn {
-        font-size: 1.7rem;
+        font-size: 2rem;
+        width: 30rem;
+
     }
 
     .modal-quit {
@@ -615,8 +630,6 @@ nav {
     .order-text-area {
         margin: 6rem 1rem;
     }
-
-
 
     .order-text-header {
         font-size: 3.5rem;
