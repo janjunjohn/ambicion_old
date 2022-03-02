@@ -93,7 +93,7 @@ nav {
 
 .allow-img {
     width: 6rem;
-    margin: 1rem 0 2.8rem 0;
+    margin: 0rem 0 2.8rem 0;
 }
 
 .allow-img:hover {
@@ -124,7 +124,7 @@ nav {
     font-size: 2rem;
     font-weight: bold;
     line-height: 4.5;
-    margin: 5rem 5rem 3rem 5rem;
+    margin: 5rem 5rem 2rem 5rem;
     padding: 0 4rem;
     border: 0;
 }
@@ -156,7 +156,7 @@ nav {
 }
 
 .order-text-area {
-    margin: 6rem 2rem;
+    margin: 6rem 2rem 3rem 2rem;
     line-height: 2;
 }
 
@@ -478,11 +478,7 @@ nav {
     }
 
     .gallery-img {
-        width: 23rem;
-    }
-
-    .gallery-img:hover {
-        width: 38rem;
+        width: 35rem;
     }
 
     .gallery-text: {
@@ -587,10 +583,13 @@ nav {
     width: 8rem;
     }
 
+    .modal-btn {
+        font-size: 1.7rem;
+    }
+
     .modal-quit {
     font-size: 3rem;
     }
-
 
     .gallery-img {
         width: 45rem;
@@ -613,8 +612,14 @@ nav {
         font-size: 3rem;
     }
 
+    .order-text-area {
+        margin: 6rem 1rem;
+    }
+
+
+
     .order-text-header {
-        font-size: 3.8rem;
+        font-size: 3.5rem;
     }
 
     .order-text-area p, .design-data-link {
