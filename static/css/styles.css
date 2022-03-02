@@ -13,7 +13,7 @@ body {
 }
 
 .contents-body {
-    margin-top: 13rem;
+    margin-top: 10rem;
 }
 
 p {
@@ -82,12 +82,22 @@ nav {
 .header {
     font-size: 6rem;
     margin-left: 2rem;
+    margin-top: 2rem;
     line-height: 1.5;
 }
 
 .small-header {
     font-size: 2rem;
     margin: 3rem auto;
+}
+
+.allow-img {
+    width: 6rem;
+    margin: 1rem 0 2.8rem 0;
+}
+
+.allow-img:hover {
+    opacity: 0.6;
 }
 
 /* Top Page ***********************************************************************************************************/
@@ -120,8 +130,12 @@ nav {
 }
 /* Gallery Section ****************************************************************************************************/
 
+#gallery-section {
+    margin-bottom: 4rem;
+}
+
 .gallery {
-    padding: 5rem 13rem 0 13rem;
+    margin-top: 3rem;
 }
 
 .gallery-img {
@@ -131,8 +145,8 @@ nav {
 }
 
 .gallery-text {
-    margin: 3rem auto 0 auto;
-    font-size: 2.5rem;
+    margin: 0 auto 1rem auto;
+    font-size: 1.5rem;
 }
 
 /* Order Section ****************************************************************************************************/
@@ -159,6 +173,11 @@ nav {
 }
 
 /* About Section ****************************************************************************************************/
+
+#about-section {
+    margin-top: 1rem;
+}
+
 .youtube-intro {
     width: 50rem;
     height: 30rem;
@@ -314,7 +333,7 @@ nav {
 
 .choice-img {
     width: 30rem;
-    border: solid 2px #121212
+    border: solid 0.8rem #121212;
 }
 
 .choice-row {
@@ -454,12 +473,12 @@ nav {
     line
     }
 
-    .modal-quit {
-    font-size: 2rem;
+    #gallery-section {
+        margin-top: 15rem;
     }
 
     .gallery-img {
-        width: 18rem;
+        width: 23rem;
     }
 
     .gallery-img:hover {
@@ -564,6 +583,19 @@ nav {
         font-size: 2.5rem;
     }
 
+    .allow-img {
+    width: 8rem;
+    }
+
+    .modal-quit {
+    font-size: 3rem;
+    }
+
+
+    .gallery-img {
+        width: 45rem;
+    }
+
     #order-section {
         padding: 1rem 5rem 0 5rem;
     }
@@ -587,6 +619,11 @@ nav {
 
     .order-text-area p, .design-data-link {
         font-size: 2.5rem;
+    }
+
+    .choice-img {
+    width: 25rem;
+    border: solid 0.8rem #121212;
     }
 
      .feedback p, span{
