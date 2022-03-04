@@ -28,7 +28,7 @@ a {
 
 .nav-border { /* adjust navbar move */
     width: 0;
-    margin: 6.5rem;
+    margin-bottom: 6.5rem;
     padding: 0;
 }
 
@@ -88,6 +88,7 @@ nav {
 
 .small-header {
     font-size: 2rem;
+    line-height: 1.2;
     margin: 3rem auto;
 }
 
@@ -271,7 +272,6 @@ nav {
 .main-contents {
     margin-top: 5rem;
     padding: 0 17rem;
-    text-align
 }
 
 .navigation {
@@ -363,13 +363,50 @@ nav {
     margin: 3rem auto;
 }
 
+.choice-img-frame {
+    width: 32rem;
+    border: solid 1rem #121212;
+    margin: 0 auto 3rem auto;
+    position: relative;
+}
+
+.check-mark {
+    color: #121212;
+    font-size: 15rem;
+    position: absolute;
+    z-index: 1;
+    top: 7rem;
+    left: 8.5rem;
+    visibility: hidden;
+}
+
 .choice-img {
-    width: 30rem;
-    border: solid 0.8rem #121212;
+    width: 100%;
+}
+
+#choices input[type="radio"] { /* invisible radio btn */
+    display: none;
+}
+
+#choices input[type="radio"]:checked + label .choice-img {
+   opacity: 0.6;
+}
+
+#choices input[type="radio"]:checked + label .check-mark {
+   visibility: visible;
+}
+
+.choice-label {
+    font-size: 2rem;
+    margin: 1rem;
 }
 
 .choice-row {
     margin-bottom: 6rem;
+}
+
+.contact-text {
+    margin-top: 4rem;
 }
 
 .contact-small-header {
@@ -413,13 +450,17 @@ nav {
 
 /* About Page *********************************************************************************************************/
 
+.about-main-contents {
+    padding-top: 3rem;
+}
+
 .greeting-container {
-    margin: 4rem 0 8rem 0;
+    margin: 4rem 0 2rem 0;
 }
 
 .text-header {
     font-size: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .section-img {
@@ -430,15 +471,28 @@ nav {
 
 .section-text {
     line-height: 2;
+    margin-bottom: 3rem;
 }
 
 .youtube-about {
-    width: 50rem;
-    height: 30rem;
+    width: 85rem;
+    height: 45rem;
     margin: 0;
     border: solid 1rem #121212;
 }
 
+.product-heading {
+    margin: 5rem auto 8rem auto;
+}
+
+.product-detail {
+    margin: 5rem auto 5rem auto;
+}
+
+.conclusion {
+    font-size: 1.7rem;
+    line-height: 2;
+}
 
 /* Mobile Friendly ****************************************************************************************************/
 
@@ -669,13 +723,31 @@ nav {
         font-size: 2.5rem;
     }
 
+    .choice-img-frame {
+        width: 25rem;
+    }
+
     .choice-img {
-    width: 25rem;
-    border: solid 0.8rem #121212;
+    width: 100%;
+    }
+
+    .check-mark {
+        font-size: 13rem;
+        top: 5.3rem;
+        left: 6rem;
     }
 
      .feedback p, span{
         font-size: 2.3rem;
+    }
+
+    .youtube-about {
+        width: 55rem;
+        height: 30rem;
+    }
+
+    .product-detail {
+    margin: 5rem 0 5rem 0;
     }
 }
 

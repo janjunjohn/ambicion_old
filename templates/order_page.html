@@ -25,7 +25,6 @@
   {% block contents %}
   <!-- Price Section -->
     <section>
-      <span id="price-nav-target"></span>
 
       <h1 class="header">見積もりは1分で。</h1>
       <hr>
@@ -237,6 +236,9 @@
             <strong id="a-set-of-price">¥0（税込）</strong>
           </li>
         </ul>
+        <a href="{{ url_for('about') + '#product-nav-target' }}">
+          <p>どうしてこんなに安いの？　品質は？</p>
+        </a>
         <script>
         $(function(){
           var uniform = $('#uniform').val();
@@ -374,73 +376,127 @@
       <hr class="nav-border">
 
       <h1 id="fab-selector" class="header">予算は決まりました。<br>あとは選ぶだけ。</h1>
-      <hr class="inner-border">
+      <hr>
+      <p>画像をクリック or タップ！</p>
+
       <h2 class="choice-header">ファブリック</h2>
 
       <form id="choices">
 
       <div class="row choice-row">
+
         <div class="col-6">
-          <label>ツルツル</label><br>
-          <input type="radio" name="fabric" value="tsuru"><br>
-          <img class="choice-img" src="{{ url_for('static', filename='/images/fabric-a.jpg') }}" alt="fabric_a">
+          <div class="choice-img-frame">
+            <input id="tsuru" class="choice-btn" type="radio" name="fabric" value="tsuru">
+            <label for="tsuru">
+              <i class="check-mark fa-solid fa-check"></i>
+              <img class="choice-img" src="{{ url_for('static', filename='/images/fabric-a.jpg') }}" alt="fabric_a">
+            </label>
+          </div>
+          <h2 class="choice-label">ツルツル</h2>
           <p>伸縮性を抑え、<br>身体へのフィット感が抜群。<br>
           トッププロも使用しており、<br>
           本格的なプレーの<br>支えとなってくれます。</p>
-
         </div>
+
         <div class="col-6">
-          <label>ザラザラ</label><br>
-          <input type="radio" name="fabric" value="zara"><br>
-          <img class="choice-img" src="{{ url_for('static', filename='/images/fabric-b.jpg') }}" alt="fabric_b">
+          <div class="choice-img-frame">
+            <input id="zara" type="radio" name="fabric" value="zara">
+            <label for="zara">
+                <i class="check-mark fa-solid fa-check"></i>
+                <img class="choice-img" src="{{ url_for('static', filename='/images/fabric-b.jpg') }}" alt="fabric_b">
+            </label>
+          </div>
+          <h2 class="choice-label">ザラザラ</h2>
           <p>高い伸縮性により、<br>ゆったりとした着心地。<br>
           肌触りがとてもきもちいい。<br>
           さまざまな用途、<br>幅広い方におすすめできます。</p>
         </div>
+
       </div>
 
         <a href="#neck-selector"><img id="neck-selector" class="allow-img" src="{{ url_for('static', filename='/images/allow-black.png') }}" alt=""></a>
 
       <h2 class="choice-header">ネック</h2>
       <div class="row choice-row">
+
         <div class="col-6">
-          <label>ラウンドネック</label><br>
-          <input type="radio" name="neck" value="round"><br>
-          <img class="choice-img" src="{{ url_for('static', filename='/images/r.jpg') }}" alt="fabric_a">
+          <div class="choice-img-frame">
+            <input id="round" type="radio" name="neck" value="round">
+            <label for="round">
+                <i class="check-mark fa-solid fa-check"></i>
+                <img class="choice-img" src="{{ url_for('static', filename='/images/r.jpg') }}" alt="round">
+            </label>
+          </div>
+          <h2 class="choice-label">ラウンド</h2>
         </div>
+
         <div class="col-6">
-          <label>ラウンドネック ＆ スモール</label><br>
-          <input type="radio" name="neck" value="round_neck"><br>
-          <img class="choice-img" src="{{ url_for('static', filename='/images/dan_r.jpg') }}" alt="fabric_a">
+          <div class="choice-img-frame">
+            <input id="round-neck" type="radio" name="neck" value="round_neck">
+            <label for="round-neck">
+                <i class="check-mark fa-solid fa-check"></i>
+                <img class="choice-img" src="{{ url_for('static', filename='/images/dan_r.jpg') }}" alt="round-sm">
+            </label>
+          </div>
+          <h2 class="choice-label">ラウンドスモール</h2>
         </div>
+
       </div>
+
       <div class="row choice-row">
+
         <div class="col-6">
-          <label>Vネック ＆ スモール</label><br>
-          <input type="radio" name="neck" value="v_sm_neck"><br>
-          <img class="choice-img" src="{{ url_for('static', filename='/images/eri_sm.jpg') }}" alt="fabric_a">
+          <div class="choice-img-frame">
+            <input id="v-sm" type="radio" name="neck" value="v_sm_neck">
+            <label for="v-sm">
+                <i class="check-mark fa-solid fa-check"></i>
+                <img class="choice-img" src="{{ url_for('static', filename='/images/eri_sm.jpg') }}" alt="v-sm"><br>
+            </label>
+          </div>
+          <h2 class="choice-label">Vスモール</h2>
         </div>
+
         <div class="col-6">
-          <label>Vネック ＆ ラージ</label><br>
-          <input type="radio" name="neck" value="v_lg_neck"><br>
-          <img class="choice-img" src="{{ url_for('static', filename='/images/eri_v.jpg') }}" alt="fabric_a">
+          <div class="choice-img-frame">
+            <input id="v-lg" type="radio" name="neck" value="v_lg_neck">
+            <label for="v-lg">
+                <i class="check-mark fa-solid fa-check"></i>
+                <img class="choice-img" src="{{ url_for('static', filename='/images/eri_v.jpg') }}" alt="v-lg"><br>
+            </label>
+          </div>
+          <h2 class="choice-label">Vラージ</h2>
         </div>
+
       </div>
 
         <a href="#sleeve-selector"><img id="sleeve-selector" class="allow-img" src="{{ url_for('static', filename='/images/allow-black.png') }}" alt=""></a>
 
       <h2 class="choice-header">スリーブ</h2>
       <div class="row">
+
         <div class="col-6">
-          <label>ハーフ</label><br>
-          <input type="radio" name="sleeve" value="short"><br>
-          <img class="choice-img" src="{{ url_for('static', filename='/images/fabric-a.jpg') }}" alt="fabric_a">
+          <div class="choice-img-frame">
+            <input id="short" type="radio" name="sleeve" value="short">
+            <label for="short">
+                <i class="check-mark fa-solid fa-check"></i>
+                <img class="choice-img" src="{{ url_for('static', filename='/images/fabric-a.jpg') }}" alt="long"><br>
+            </label>
+          </div>
+          <h2 class="choice-label">ハーフ</h2>
         </div>
+
         <div class="col-6">
-          <label>ロング</label><br>
-          <input type="radio" name="sleeve" value="long"><br>
-          <img class="choice-img" src="{{ url_for('static', filename='/images/fabric-b.jpg') }}" alt="fabric_b">
+          <div class="choice-img-frame">
+            <input id="long" type="radio" name="sleeve" value="long">
+            <label for="long">
+                <i class="check-mark fa-solid fa-check"></i>
+                <img class="choice-img" src="{{ url_for('static', filename='/images/fabric-b.jpg') }}" alt="half"><br>
+            </label>
+          </div>
+          <h2 class="choice-label">ロング</h2>
         </div>
+
       </div>
       </form>
 
@@ -453,7 +509,7 @@
 
       <h1 class="header">あなたのメール、<br>お待ちしております。</h1>
       <hr>
-      <p>こちらのメールで、注文が確定することはございません。<br>
+      <p class="contact-text">こちらのメールで、<strong>注文が確定することはございません。</strong><br>
       ご相談がスムーズに進むように、<br>選んでいただいた内容を活用いたします。<br>
       ただ質問したい方などもこちらからお気軽にどうぞ！<br>
       気の済むまでやりとりをしていただき、<br>

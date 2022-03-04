@@ -11,19 +11,15 @@
         <div class="nav-btn">グリーティング</div>
     </a>
     <a href="#product-nav-target">
-        <div class="nav-btn">ファクトリー</div>
+        <div class="nav-btn">プロダクト</div>
     </a>
-    <a href="#about-gallery-nav-target">
-        <div class="nav-btn">会社情報</div>
+    <a href="#photo-gallery-nav-target">
+        <div class="nav-btn">ギャラリー</div>
     </a>
   {% endblock %}
 
 {% block contents %}
-<body class="fadeUp">
-
 <section>
-    <span id="greeting-nav-target"></span>
-    <hr class="nav-border">
 
     <h1 class="header">代表あいさつ。</h1>
     <hr>
@@ -65,7 +61,6 @@
                 「オリジナルユニフォームで、<br>所属するサークルの気持ちを一つにしたい。」<br>
                 さまざまなみなさんの志を、<br>
                 AMBICIÓNと共に叶えましょう！<br>
-                <span id=""></span>
             </p>
         </div>
 
@@ -76,26 +71,53 @@
 <section>
     <span id="product-nav-target"></span>
     <hr class="nav-border">
-
     <h1 class="header">私たちが作ります。</h1>
     <hr>
-    <h2 class="small-header">工場の様子、スミスさんの想い。</h2>
-    <iframe class="youtube-about" width="560" height="315" src="https://www.youtube.com/embed/FSo8q9kxkPE"
-            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-    </iframe>
-    <div class="row container-fluid">
-        <div class="col-6">
-
+    <div class="product-heading">
+        <h2 class="text-header">工場の様子、スミスさんの想い。</h2>
+        <iframe class="youtube-about" src="https://www.youtube.com/embed/FSo8q9kxkPE"
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+    </div>
+    <a href="#product-detail"><img id="product-detail" class="allow-img" src="{{ url_for('static', filename='/images/allow-black.png') }}" alt=""></a>
+    <div class="product-detail row container-fluid">
+        <div class="section-text col-lg-6">
+            <h2 class="text-header">プロクオリティ。</h2>
+            <p class="section-text">
+                現地の工場では、<br>
+                専門の機械と熟練された技術者たちにより、<br>
+                プロクオリティのユニフォームを作成しています。<br>
+                代表自身がプロサッカー選手であり、<br>本人がその質の高さに驚いたほどです。<br>
+            </p>
         </div>
-        <div class="section-text col-6">
+        <div class="section-text col-lg-6">
+            <h1 class="text-header">圧倒的安さ。</h1>
+            <p class="section-text">
+                AMBICIÓNでは、<br>
+                工場と代表の信頼関係のもと、 <br>代理店などは一切通しておりません。 <br>
+                工場から直接みなさんのところまで <br>ユニフォームをお届けしております。<br>
+            </p>
+        </div>
 
+        <div class="container-fluid">
+            <div class="section-text">
+                <p class="conclusion">
+                    <strong>スリランカ</strong>という縫製が盛んな国と<strong>旅するサッカー選手。</strong><br>
+                    この出会いが、<strong>唯一無二のコストパフォーマンス</strong>を実現しました。<br>
+                    <strong>価格と質。</strong><br>その両方でみなさんを驚かせることができると自負しております。<br>
+                </p>
+            </div>
         </div>
     </div>
 
 </section>
 
+<section>
+    <span id="photo-gallery-nav-target"></span>
+    <hr class="nav-border">
 
-</body>
+
+</section>
 
 
 {% endblock %}
