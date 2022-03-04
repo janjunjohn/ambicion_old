@@ -112,9 +112,14 @@
         <p class="english-only">© Copyright {{ year }} AMBICIÓN</p>
     </footer>
   <script>
-   $(window).on('load', function() {
-      window.location.href = "#aaa";
-   });
+  $(window).on('load', function() {
+    var headerHeight = 60;
+    var urlHash = location.hash;
+    if (urlHash) {
+      var position = $(urlHash).offset().top - headerHeight;
+      $('html, body').animate({ scrollTop: position }, 0);
+    }
+  });
   </script>
 
     <!-- Optional JavaScript; choose one of the two! -->

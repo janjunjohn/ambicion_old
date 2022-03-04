@@ -15,10 +15,14 @@
 
   </footer>
 <script>
-   $(window).on('load', function() {
-      window.location.href = "#aaa";
-   });
-
+  $(window).on('load', function() {
+    var headerHeight = 60;
+    var urlHash = location.hash;
+    if (urlHash) {
+      var position = $(urlHash).offset().top - headerHeight;
+      $('html, body').animate({ scrollTop: position }, 0);
+    }
+  });
 </script>
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: Bootstrap Bundle with Popper -->

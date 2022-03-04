@@ -27,9 +27,8 @@ a {
 }
 
 .nav-border { /* adjust navbar move */
-    width: 0;
-    margin-bottom: 6.5rem;
-    padding: 0;
+    opacity: 0;
+    padding: 3rem;
 }
 
 .nav-hr, .nav-hr-white {
