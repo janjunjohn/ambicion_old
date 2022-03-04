@@ -768,10 +768,27 @@ nav {
 
 /* Animations *********************************************************************************************************/
 
+.fadeOut {
+    animation-name:fadeOutAnime;
+    animation-duration:2.3s;
+    animation-fill-mode:forwards;
+    opacity:1;
+}
+
+@keyframes fadeOutAnime{
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
 .fadeIn {
     animation-name:fadeInAnime;
     animation-duration: 1.5s;
-    animation-delay:2.5s;
+    animation-delay:1.5s;
     animation-fill-mode: forwards;
     opacity: 0;
 }
@@ -788,7 +805,6 @@ nav {
 .fadeUp {
     animation-name:fadeUpAnime;
     animation-duration: 1s;
-    animation-delay: 1s;
     animation-fill-mode: forwards;
     opacity: 0;
 }
@@ -834,28 +850,28 @@ nav {
 .line::before {
 	top:0;
 	left:0;
-	animation: lineAnime .5s linear 1s forwards;/*delay 0s, drawing for 0.5s*/
+	animation: lineAnime .5s linear 0s forwards;/*delay 0s, drawing for 0.5s*/
 }
 
 /*right*/
 .line2::before{
 	top:0;
 	right:0;
-	animation: lineAnime2 .5s linear 1.5s forwards;/*delay 0.5s, drawing for 0.5s*/
+	animation: lineAnime2 .5s linear .5s forwards;/*delay 0.5s, drawing for 0.5s*/
 }
 
 /*bottom*/
 .line::after {
 	bottom:0;
 	right:0;
-	animation: lineAnime .5s linear 1s forwards;/*delay 0s, drawing for 0.5s*/
+	animation: lineAnime .5s linear 0s forwards;/*delay 0s, drawing for 0.5s*/
 }
 
 /*left*/
 .line2::after{
 	bottom:0;
 	left:0;
-	animation: lineAnime2 .5s linear 1.5s forwards;/*delay 0.5s, drawing for 0.5s*/
+	animation: lineAnime2 .5s linear .5s forwards;/*delay 0.5s, drawing for 0.5s*/
 }
 
 @keyframes lineAnime {
@@ -870,7 +886,7 @@ nav {
 
 /*inner contents*/
 .line .lineinappear{
-	animation: lineInnerAnime .5s linear 2s forwards;/*delay 1s, drawing for 0.5s*/
+	animation: lineInnerAnime .5s linear 1s forwards;/*delay 1s, drawing for 0.5s*/
 	opacity: 0;/*initial opacity*/
 }
 
