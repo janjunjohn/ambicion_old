@@ -1,11 +1,11 @@
 {% include 'header.html' %}
 
 <!-- Main Contents -->
-<div class="contents-body fadeUp">
+<div class="contents-body">
 
 
     <!--  Gallery Section -->
-    <section id="gallery-section">
+    <section id="gallery-section" class="before-appear">
     <!-- Section Header -->
     {% if submitted: %}
       <h1 class="heading-text">メール送信完了。<br>{{ username }}さん、 <br> ありがとうございます！！</h1>
@@ -43,7 +43,7 @@
     <a href="#order-nav-target"><img id="order-nav-target" class="allow-img" src="{{ url_for('static', filename='/images/allow-white.png') }}" alt=""></a>
 
     <!-- Order Section -->
-    <section id="order-section">
+    <section id="order-section" class="before-appear">
 
         <!-- Section Header -->
         <h1 class="header">オーダーはこちら。</h1>
@@ -70,7 +70,7 @@
     <a href="#about-nav-target"><img id="about-nav-target" class="allow-img" src="{{ url_for('static', filename='/images/allow-white.png') }}" alt=""></a>
 
     <!-- About Section -->
-    <section id="about-section">
+    <section id="about-section" class="before-appear">
 
         <!-- Section Header -->
         <h1 class="header">AMBICIÓNとは？</h1>
@@ -95,7 +95,7 @@
 
 
     <!-- Contact Section -->
-    <section>
+    <section id="contact-mail-section" class="before-appear">
         <h1>質問はこちらから。</h1>
         <form class="needs-validation" action="{{ url_for('home') }}" method="post" novalidate>
               <div class="submit-area">

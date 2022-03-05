@@ -57,9 +57,9 @@
     <div class="page-heading">
       <div class="heading-container container-fluid">
 
-        <div class="line">
-        <div class="line2">
-        <div class="lineinappear">
+        <div id="line">
+        <div id="line2">
+        <div id=line-header>
           {% block heading %}
           {% endblock %}
         </div>
@@ -82,7 +82,7 @@
 
     <!-- Order Navigation -->
     <div class="navigation">
-      <div class="fadeIn">
+      <div id="second-navigation" class="before-appear">
         {% block navigation %}
         {% endblock %}
       </div>
@@ -90,7 +90,7 @@
 
 
     <!-- Main Contents -->
-    <div class="main-contents fadeUp">
+    <div class="main-contents">
       {% block contents %}
       {% endblock %}
     </div>
@@ -112,14 +112,31 @@
         <p class="english-only">© Copyright {{ year }} AMBICIÓN</p>
     </footer>
   <script>
-  $(window).on('load', function() {
+  $(window).on('load', function() { // after loading
     var header_height = 23;
     var url_hash = location.hash;
+    var fade_up_sections = ['#price-section', '#choice-section', '#preorder-section', '#greeting-section', '#product-section', '#photo-gallery-section']; //each section
     if (url_hash) {
-      var position = $(url_hash).offset().top - header_height;
+      var position = $(url_hash).offset().top - header_height; // move navbar proper position
       $('html, body').animate({ scrollTop: position }, 0);
-      console.log(header_height);
     }
+
+    $("#line").addClass("line"); // header animations
+    $("#line2").addClass("line2");
+    $("#line-header").addClass("lineinappear");
+    $("#second-navigation").addClass("fadeIn");
+
+    $(window).scroll(function(){
+       for (const section of fade_up_sections) {
+         if ($(section).length) {
+           var top = $(section).offset().top;
+           var position = top - $(window).height() + 200;
+           if($(window).scrollTop() > position){
+             $(section).addClass("fadeUp");
+         }
+        }
+       }
+    })
   });
   </script>
 

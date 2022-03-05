@@ -14,15 +14,28 @@
     <p class="english-only">© Copyright {{ year }} AMBICIÓN</p>
 
   </footer>
+
+<!-- Animation Controller -->
 <script>
-  $(window).on('load', function() {
+  $(window).on('load', function() { // after loading
     var header_height = 23;
     var url_hash = location.hash;
+    var fade_up_sections = ['#order-section', '#about-section', '#contact-mail-section']; //each section
     if (url_hash) {
-      var position = $(url_hash).offset().top - header_height;
+      var position = $(url_hash).offset().top - header_height; // move navbar proper position
       $('html, body').animate({ scrollTop: position }, 0);
-      console.log(header_height);
     }
+
+    $("#gallery-section").addClass("fadeUp");
+    $(window).scroll(function(){
+       for (const section of fade_up_sections) {
+         var top = $(section).offset().top;
+         var position = top - $(window).height() + 200;
+         if($(window).scrollTop() > position){
+           $(section).addClass("fadeUp");
+         }
+       }
+    })
   });
 </script>
     <!-- Optional JavaScript; choose one of the two! -->
