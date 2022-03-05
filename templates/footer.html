@@ -16,11 +16,12 @@
   </footer>
 <script>
   $(window).on('load', function() {
-    var headerHeight = 60;
+    var headerHeight = 45;
     var urlHash = location.hash;
     if (urlHash) {
       var position = $(urlHash).offset().top - headerHeight;
       $('html, body').animate({ scrollTop: position }, 0);
+      console.log(headerHeight);
     }
   });
 </script>
