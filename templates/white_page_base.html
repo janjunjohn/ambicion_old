@@ -126,7 +126,7 @@
        ];
 
     $('a[href^="#"]').click(function() {
-    var speed = 10; // scroll speed /ms
+    var speed = 500; // scroll speed /ms
     var href = $(this).attr("href");
     var target = $(href == "#" || href == "" ? 'html' : href);
     var position = target.offset().top;
