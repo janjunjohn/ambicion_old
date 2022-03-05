@@ -28,7 +28,7 @@
 
     $("#gallery-section").addClass("fadeUp");
     $(window).scroll(function(){
-       for (const section of fade_up_sections) {
+       for (const section of fade_up_sections) { // animation by scrolling
          var top = $(section).offset().top;
          var position = top - $(window).height() + 200;
          if($(window).scrollTop() > position){

@@ -25,8 +25,12 @@
   </head>
 
   <body class="white-page">
-  <!-- Navigation Bar -->
-    <nav class='white-page-nav navbar navbar-expand-lg navbar-dark'>
+
+  <!-- Page Heading -->
+  <div class="page-heading">
+
+    <!-- Navigation Bar -->
+    <nav class='sticky-top white-page-nav navbar navbar-expand-lg navbar-dark'>
       <div class="container-fluid">
         <a class='navbar-brand' href='{{ url_for("home") }}'>
         <img class="navbar-logo" src="{{ url_for('static', filename='/images/logo_white.png') }}" alt="logo">
@@ -52,14 +56,11 @@
       </div>
 
     </nav>
-
-    <!-- Page Heading -->
-    <div class="page-heading">
       <div class="heading-container container-fluid">
 
         <div id="line">
         <div id="line2">
-        <div id=line-header>
+        <div id=line-header class="before-appear">
           {% block heading %}
           {% endblock %}
         </div>
@@ -127,7 +128,9 @@
     $("#second-navigation").addClass("fadeIn");
 
     $(window).scroll(function(){
-       for (const section of fade_up_sections) {
+
+
+       for (const section of fade_up_sections) { // animation by scrolling
          if ($(section).length) {
            var top = $(section).offset().top;
            var position = top - $(window).height() + 200;

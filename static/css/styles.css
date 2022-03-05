@@ -229,7 +229,10 @@ nav {
 
 .white-page-nav {
     background-color: #121212;
-    opacity: 1;
+    opacity: 0.95;
+    position: sticky;
+    top: 0;
+    z-index: 3;
 }
 
 .page-heading {
@@ -247,7 +250,7 @@ nav {
 .shadow {
     padding: 0;
     margin: 0;
-    opacity: 0.5;
+    opacity: 0.68;
     z-index: 1;
     height: 100%
 }
@@ -261,7 +264,7 @@ nav {
 .heading-container {
     position: absolute;
     z-index:2;
-    top: 25rem;
+    top: 28rem;
     padding: 0 25rem;
 }
 
@@ -603,7 +606,7 @@ nav {
     }
 
     .heading-container {
-        top: 8rem;
+        top: 14rem;
         padding: 5rem;
     }
 
@@ -715,7 +718,7 @@ nav {
     }
 
     .heading-container {
-        top: 4rem;
+        top: 17rem;
         padding: 5rem;
     }
 
