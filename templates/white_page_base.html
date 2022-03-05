@@ -116,7 +116,24 @@
   $(window).on('load', function() { // after loading
     var header_height = 23;
     var url_hash = location.hash;
-    var fade_up_sections = ['#price-section', '#choice-section', '#preorder-section', '#greeting-section', '#product-section', '#photo-gallery-section']; //each section
+    var fade_up_sections = [  //each section
+      '#price-section',
+      '#choice-section', '#fabrics', '#necks', '#sleeves',
+      '#preorder-section',
+       '#greeting-section', '#greeting-first', '#greeting-second',
+       '#product-section',
+       '#photo-gallery-section'
+       ];
+
+    $('a[href^="#"]').click(function() {
+    var speed = 10; // scroll speed /ms
+    var href = $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top;
+    $('html').animate({scrollTop:position}, speed, 'swing');
+    return false;
+    });
+
     if (url_hash) {
       var position = $(url_hash).offset().top - header_height; // move navbar proper position
       $('html, body').animate({ scrollTop: position }, 0);
@@ -133,7 +150,7 @@
        for (const section of fade_up_sections) { // animation by scrolling
          if ($(section).length) {
            var top = $(section).offset().top;
-           var position = top - $(window).height() + 200;
+           var position = top - $(window).height() + 280;
            if($(window).scrollTop() > position){
              $(section).addClass("fadeUp");
          }

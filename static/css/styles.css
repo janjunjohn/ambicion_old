@@ -153,6 +153,10 @@ nav {
 }
 /* Gallery Section ****************************************************************************************************/
 
+#carouselExampleControls {
+    margin-bottom: 4.5rem;
+}
+
 #gallery-section {
     margin-bottom: 4rem;
 }
@@ -793,7 +797,7 @@ nav {
 
 .fadeUp {
     animation-name:fadeUpAnime;
-    animation-duration: 0.6s;
+    animation-duration: 0.58s;
     animation-fill-mode: forwards;
     opacity: 0;
 }

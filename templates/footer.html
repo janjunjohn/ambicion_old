@@ -26,11 +26,20 @@
       $('html, body').animate({ scrollTop: position }, 0);
     }
 
+    $('a[href^="#"]').click(function() {
+    var speed = 10; // scroll speed /ms
+    var href = $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top;
+    $('html').animate({scrollTop:position}, speed, 'swing');
+    return false;
+    });
+
     $("#gallery-section").addClass("fadeUp");
     $(window).scroll(function(){
        for (const section of fade_up_sections) { // animation by scrolling
          var top = $(section).offset().top;
-         var position = top - $(window).height() + 200;
+         var position = top - $(window).height() + 280;
          if($(window).scrollTop() > position){
            $(section).addClass("fadeUp");
          }

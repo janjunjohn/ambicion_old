@@ -23,7 +23,7 @@
 
     <h1 class="header">代表あいさつ。</h1>
     <hr>
-    <div class="greeting-container row container-fluid">
+    <div id='greeting-first' class="before-appear greeting-container row container-fluid">
         <div class="col-lg-6">
             <img class="section-img" src="{{ url_for('static', filename='/images/ryota_bay.jpg') }}" alt="ryota bay">
         </div>
@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <div class="greeting-container row container-fluid">
+    <div id="greeting-second" class="before-appear greeting-container row container-fluid">
 
         <div class="col-lg-6 order-lg-2">
             <img class="section-img" src="{{ url_for('static', filename='/images/stuff.jpg') }}" alt="stuff">
