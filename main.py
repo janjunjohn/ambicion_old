@@ -1,5 +1,5 @@
 import datetime
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from flask_mail import Mail, Message
 import os
 
@@ -20,6 +20,14 @@ app.config['MAIL_DEFAULT_SENDER'] = PYTHON_EMAIL
 mail = Mail(app)  # Flask-Mail
 
 year = datetime.datetime.now().year
+
+
+@app.before_request
+def before_request():
+    if not request.is_secure and app.env != 'development':
+        url = request.url.replace('http://', 'https://', 1)
+        code = 301
+        return redirect(url, code=code)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -72,9 +80,6 @@ def order():
 @app.route('/about')
 def about():
     return render_template('about.html', year=year)
-
-
-
 
 
 if __name__ == '__main__':
