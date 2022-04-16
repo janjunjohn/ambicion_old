@@ -380,6 +380,10 @@ nav {
     position: relative;
 }
 
+.frame-label {
+   width: 100%;
+}
+
 .check-mark {
     color: #121212;
     font-size: 15rem;
@@ -825,7 +829,7 @@ nav {
   position: absolute;
   content:"";
   width:0.2rem;
-  height:1px;
+  height:0.2rem;
   background:#fff;/* color of the line*/
 }
 
@@ -835,7 +839,7 @@ nav {
   position: absolute;
   content:"";
   width: 0.2rem;
-  height:0;
+  height:0,2rem;
   background:#fff;/* color of the line*/
 }
 
