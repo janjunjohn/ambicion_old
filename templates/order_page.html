@@ -251,8 +251,8 @@
           const uni_dict = {
             'default': {0: 0, 1: 0, 2: 0, 3: 0, 4: 0},
             'set': {0: 5500, 1: 4500, 2: 4500, 3: 3500, 4: 3500},
-            'shirt': {0: 4000, 1: 3500, 2:3500, 3: 3500, 4: 3500},
-            'pants': {0: 3000, 1:2500, 2: 2500, 3: 2500, 4: 2500},
+            'shirt': {0: 4000, 1: 3500, 2: 3500, 3: 3500, 4: 3500},
+            'pants': {0: 3000, 1: 2500, 2: 2500, 3: 2500, 4: 2500},
           };
           const socks_dict = {0: 1500, 1: 1000, 2: 1000, 3: 1000, 4: 1000};
           const trans_dict = {1: 200, 2: 180, 3: 180, 4: 150};
@@ -282,7 +282,7 @@
           change_selected(id='socks-selected', selected='no-socks'); //デフォルトを適用。
 
           const checkout = function() {  //selectorの値が変わる毎に、.checkoutに代金を反映させる。
-            if (number <=0) {
+            if (number <= 0) {
               $('#uni-price').text('¥0');
               $('#trans-price').text('¥0');
               $('#delivery-cost').text('¥0');
