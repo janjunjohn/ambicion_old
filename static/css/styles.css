@@ -231,6 +231,11 @@ nav {
     margin: 2rem 0;
 }
 /* Contact Section ****************************************************************************************************/
+#contact-nav-target {
+    position: relative;
+    bottom: 12rem;
+}
+
 .contact-btn {
     width: 25rem;
     font-size: 1.7rem;
