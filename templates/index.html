@@ -122,21 +122,34 @@
             </div>
         </div>
     </section>
-    <span id="news-nav-target"></span> <!-- navigation btn target -->
-    <hr class="nav-border">
+    <a href="#news-nav-target">
+      <img id="news-nav-target"
+           class="allow-img"
+           src="static/images/design_pieces/allow-white.png"
+           alt="">
+    </a>
     <!--  News Section -->
     <section id="news-section" class="before-appear">
         <!-- Section Header -->
         <h1 class="header">ニュース</h1>
+        
         <div id="newsSlide" class="carousel slide" data-bs-ride="carousel">
-            <div class="news carousel-inner">
-                <div class="carousel-item active">
-                    <img class="news-img"
-                         src="static/images/news_images/cloud_founding.jpg"
-                         alt="cloud founding">
-                    <h2 class="gallery-text ">現在クラウドファンディング実施中！！</h2>
-                </div>
+
+          <div class="news carousel-inner">
+            <div class="carousel-item active">
+              <div class="news-text">
+                <h2 class="news-header">
+                  現在クラウドファンディング実施中！！
+                </h2>
+                <p class="news-description">
+                  AMBICIÓNオリジナルTシャツをゲットしよう。
+                </p>
+              </div>
+              <a href="https://readyfor.jp/projects/AMBICION">
+                <img class="news-image" src="static/images/news_images/cloud_founding.jpg" alt="">
+              </a>
             </div>
+          </div>
             <button class="carousel-control-prev"
                     type="button"
                     data-bs-target="#newsSlide"
@@ -152,12 +165,6 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <a href="#contact-nav-target">
-            <img id="order-nav-target"
-                 class="allow-img"
-                 src="static/images/design_pieces/allow-white.png"
-                 alt="">
-        </a>
     </section>
     <!-- Contact Section -->
     <section id="contact-mail-section" class="before-appear">
@@ -183,7 +190,7 @@
                            name="email"
                            placeholder="返信用メールアドレス"
                            required>
-                    <div class="invalid-feedback">メー��アドレスを入力してください。</div>
+                    <div class="invalid-feedback">メールアドレスを入力してください。</div>
                 </div>
                 <div class="input-group mx-auto">
                     <span class="input-group-text"><i class="fa-solid fa-pen-to-square text-light"></i></span>
