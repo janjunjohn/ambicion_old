@@ -20,7 +20,7 @@
   $(window).on('load', function() { // after loading
     var header_height = 23;
     var url_hash = location.hash;
-    var fade_up_sections = ['#order-section', '#about-section', '#news-section', '#contact-mail-section']; //each section
+    var fade_up_sections = ['#order-section', '#product-section', '#about-section', '#news-section', '#contact-mail-section']; //each section
     if (url_hash) {
       var position = $(url_hash).offset().top - header_height; // move navbar proper position
       $('html, body').animate({ scrollTop: position }, 0);
