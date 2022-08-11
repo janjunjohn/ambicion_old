@@ -199,8 +199,9 @@ nav {
 }
 
 /* Product Section **************************************************************************************************/
-.product_image {
-    width: 38rem;
+.product-image {
+    width: 45rem;
+    display: block;
 }
 
 
