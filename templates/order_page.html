@@ -37,9 +37,7 @@
                 <th style="width: 20%;"></th>
                 <th style="width: 16%;"><div class="price-list-row">19枚以下</div></th>
                 <th style="width: 16%;"><div class="price-list-row">20枚以上</div></th>
-                <th style="width: 16%;"><div class="price-list-row">40枚以上</div></th>
                 <th style="width: 16%;"><div class="price-list-row">50枚以上</div></th>
-                <th style="width: 16%;"><div class="price-list-row">60枚以上</div></th>
               </tr>
             </thead>
             <tbody>
@@ -56,14 +54,14 @@
                     ¥5,500 / 枚
                   </div>
                 </td>
-                <td colspan="2">
+                <td>
                   <div class="price-list-row">
                     ¥4,500 / 枚
                   </div>
                 </td>
-                <td colspan="2">
+                <td>
                   <div class="price-list-row">
-                    ¥3,500 / 枚
+                    ¥4,000 / 枚
                   </div>
                 </td>
               </tr>
@@ -79,9 +77,22 @@
                     ¥4,000 / 枚
                   </div>
                 </td>
-                <td colspan="4">
+                <td colspan="2">
                   <div class="price-list-row">
                     ¥3,500 / 枚
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="list-select-row">
+                  <div class="price-list-row">
+                    <img class="icons8-icon" src="https://img.icons8.com/external-solidglyph-m-oki-orlando/32/000000/external-long-mens-fashion-solid-solidglyph-m-oki-orlando.png" alt="long-T"/>
+                    ロング
+                  </div>
+                </th>
+                <td colspan=3>
+                  <div class="price-list-row">
+                  シャツ代金  + ¥750 / 枚
                   </div>
                 </td>
               </tr>
@@ -97,7 +108,7 @@
                     ¥3,000 / 枚
                   </div>
                 </td>
-                <td colspan="4">
+                <td colspan="2">
                   <div class="price-list-row">
                     ¥2,500 / 枚
                   </div>
@@ -117,7 +128,7 @@
                     ¥1,500 / 枚
                   </div>
                 </td>
-                <td colspan="4">
+                <td colspan="2">
                   <div class="price-list-row">
                     ¥1,000 / 枚
                   </div>
@@ -138,19 +149,9 @@
                     ¥5,000
                   </div>
                 </td>
-                <td>
-                  <div class="price-list-row">
-                    ¥200 / 枚
-                  </div>
-                </td>
                 <td colspan="2">
                   <div class="price-list-row">
-                    ¥180 / 枚
-                  </div>
-                </td>
-                <td>
-                  <div class="price-list-row">
-                    ¥150 / 枚
+                    ¥200 / 枚
                   </div>
                 </td>
               </tr>
@@ -164,7 +165,7 @@
                     国内配送料
                   </div>
                 </th>
-                <td colspan="5">
+                <td colspan="3">
                   <div class="price-list-row">
                     全国一律 ¥1,000
                   </div>
@@ -174,14 +175,17 @@
 
           </table>
         <a href="https://icons8.com/icon/FKMLK2Dk1YDz/pants"><p class="icons8-link">Pants icon by Icons8</p></a>
+        <br>
+        <a target="_blank" href="https://icons8.com/icon/zqImYabYvsXe/long"><p class="icons8-link">Long icon by Icons8</p></a>
+
       </div>
 
       <a href="#uni-selector"><img id="uni-selector" class="allow-img" src="static/images/design_pieces/allow-black.png" alt=""></a>
 
       <h2 class="small-header">内容を打ち込むと、予算が分かります。</h2>
       <div class="price-selector row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-2 col-4">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-2 col-3">
         <label for="uniform" class="form-label">ユニフォーム</label>
         <select class="rounded-0 select-text form-select" id="uniform" required>
           <option value="default">ユニフォームを選択</option>
@@ -190,14 +194,21 @@
           <option value="pants">パンツのみ</option>
         </select>
       </div>
-      <div class="col-lg-2 col-4">
+      <div class="col-lg-2 col-3">
+        <label for="uniform" class="form-label">スリーブ</label>
+        <select class="rounded-0 select-text form-select" id="sleeve" required>
+          <option value="short">ショート</option>
+          <option value="long">ロング</option>
+        </select>
+      </div>
+      <div class="col-lg-2 col-3">
         <label for="socks" class="form-label">ソックス</label>
         <select class="rounded-0 select-text form-select" id="socks" required>
           <option value="no-socks">なし</option>
           <option value="socks">あり</option>
         </select>
       </div>
-      <div class="col-lg-2 col-4">
+      <div class="col-lg-2 col-3">
         <label for="number" class="form-label">枚数</label>
         <input type="number" min="0" max="100" class="rounded-0 select-text form-control" id="number" placeholder="半角数字で入力" required="">
       </div>
@@ -249,29 +260,29 @@
           const neck_choices = choices.neck;
           const sleeve_choices = choices.sleeve;
           const uni_dict = {
-            'default': {0: 0, 1: 0, 2: 0, 3: 0, 4: 0},
-            'set': {0: 5500, 1: 4500, 2: 4500, 3: 3500, 4: 3500},
-            'shirt': {0: 4000, 1: 3500, 2: 3500, 3: 3500, 4: 3500},
-            'pants': {0: 3000, 1: 2500, 2: 2500, 3: 2500, 4: 2500},
+            'default': {0: 0, 1: 0, 2: 0},
+            'set': {0: 5500, 1: 4500, 2: 4000},
+            'shirt': {0: 4000, 1: 3500, 2: 3500},
+            'pants': {0: 3000, 1: 2500, 2: 2500},
           };
-          const socks_dict = {0: 1500, 1: 1000, 2: 1000, 3: 1000, 4: 1000};
-          const trans_dict = {1: 200, 2: 180, 3: 180, 4: 150};
+          const long_sleeve_cost = 750;
+          const socks_dict = {0: 1500, 1: 1000, 2: 1000};
+          const trans_dict = {1: 200, 2: 200};
           const delivery_cost = 1000;
           const text_dict = {
             'default': '未選択',
-            'set': '上下セット /',
-            'shirt': 'シャツのみ /',
-            'pants': 'パンツのみ /',
-            'no-socks': 'ソックスなし',
-            'socks': 'ソックスあり',
+            'set': '上下セット',
+            'shirt': 'シャツのみ',
+            'pants': 'パンツのみ',
+            'short': 'ショート',
+            'long': 'ロング',
+            'no-socks': '/ ソックスあり',
             'tsuru': 'ツルツル',
             'zara': 'ザラザラ',
             'round': 'ラウンドネック',
             'round_neck': 'ラウンドネック ＆ スモール',
             'v_sm_neck': 'Vネック ＆ スモール',
             'v_lg_neck': 'Vネック ＆ ラージ',
-            'short': 'ハーフ',
-            'long': 'ロング',
           };
 
           const change_selected = function(id, selected) {
@@ -279,7 +290,8 @@
             $(`#${id}-data`).val(text_dict[selected]) //メール送信用に格納
           };
 
-          change_selected(id='socks-selected', selected='no-socks'); //デフォルトを適用。
+          change_selected(id='socks-selected', selected='no-socks');
+          change_selected(id='sleeve-selected', selected='short'); //デフォルトを適用。
 
           const checkout = function() {  //selectorの値が変わる毎に、.checkoutに代金を反映させる。
             if (number <= 0) {
@@ -292,16 +304,15 @@
             }else{
               if (number < 20) {
                 var amount = 0;
-              }else if (number < 40) {
-                var amount = 1;
               }else if (number < 50) {
-                var amount = 2;
-              }else if (number < 60) {
-                var amount = 3;
+                var amount = 1;
               }else{
-                var amount = 4; //「amount」は、枚数による代金の変わり目。
+                var amount = 2; //「amount」は、枚数による代金の変わり目。
               }
               var uni_price = uni_dict[uniform][amount] * number; //ユニフォーム代金　現在の枚数における１枚あたりの値段 * 枚数
+              if (sleeve == 'long') { //ロングスリーブの場合
+                uni_price += long_sleeve_cost * number; //ロングスリーブ代金　750円 * 枚数 を追加
+              }
               if (socks == 'socks') { //ソックスありの場合
                 uni_price += socks_dict[amount] * number; //ソックス代金　現在の枚数における１枚あたりの値段 * 枚数 を追加。
               }
@@ -326,6 +337,12 @@
           $('#uniform').change(function() {
             uniform = ($(this).val());
             change_selected(id='uni-selected', selected=uniform);
+            checkout();
+          });
+
+          $('#sleeve').change(function() {
+            sleeve = ($(this).val());
+            change_selected(id='sleeve-selected', selected=sleeve);
             checkout();
           });
 
@@ -470,38 +487,6 @@
             </div>
           </div>
         </div>
-
-        <a href="#sleeve-selector"><img id="sleeve-selector" class="allow-img" src="static/images/design_pieces/allow-black.png" alt=""></a>
-
-        <div id="sleeves" class="before-appear">
-
-          <h2 class="choice-header">スリーブ</h2>
-          <div class="row">
-
-            <div class="col-6">
-              <div class="choice-img-frame">
-                <input id="short" type="radio" name="sleeve" value="short">
-                <label class="frame-label" for="short">
-                    <i class="check-mark fa-solid fa-check"></i>
-                    <img class="choice-img" src="static/images/choice_images/hansode.jpg" alt="long"><br>
-                </label>
-              </div>
-              <h2 class="choice-label">ハーフ</h2>
-            </div>
-
-            <div class="col-6">
-              <div class="choice-img-frame">
-                <input id="long" type="radio" name="sleeve" value="long">
-                <label class="frame-label" for="long">
-                    <i class="check-mark fa-solid fa-check"></i>
-                    <img class="choice-img" src="static/images/choice_images/nagasode.jpg" alt="half"><br>
-                </label>
-              </div>
-              <h2 class="choice-label">ロング</h2>
-            </div>
-          </div>
-        </div>
-
       </form>
 
     </section>
@@ -528,11 +513,15 @@
       <div class="feedback">
         <p>ユニフォーム <i class="fa-solid fa-angles-right"></i>
           <a href="#uni-selector">
-            <span class="selected-item" id="uni-selected">未選択 /</span>
+            <span class="selected-item" id="uni-selected">未選択</span>
             <input type="hidden" id="uni-selected-data" name="form-uniform">
-            <span class="selected-item" id="socks-selected">未選択</span>
+            <span class="selected-item" id="socks-selected">/ 未選択</span>
             <input type="hidden" id="socks-selected-data" name="form-socks">
           </a>
+        </p>
+        <p>スリーブ <i class="fa-solid fa-angles-right"></i>
+          <a href="#uni-selector"><span class="selected-item" id="sleeve-selected">未選択</span></a>
+          <input type="hidden" id="sleeve-selected-data" name="form-sleeve">
         </p>
         <p>枚数 <i class="fa-solid fa-angles-right"></i>
           <a href="#uni-selector"><span class="selected-item" id="num-selected">未選択</span></a>
@@ -545,10 +534,6 @@
         <p>ネック <i class="fa-solid fa-angles-right"></i>
           <a href="#neck-selector"><span class="selected-item" id="neck-selected">未選択</span></a>
           <input type="hidden" id="neck-selected-data" name="form-neck">
-        </p>
-        <p>スリーブ <i class="fa-solid fa-angles-right"></i>
-          <a href="#sleeve-selector"><span class="selected-item" id="sleeve-selected">未選択</span></a>
-          <input type="hidden" id="sleeve-selected-data" name="form-sleeve">
         </p>
       </div>
 
