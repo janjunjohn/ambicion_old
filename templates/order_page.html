@@ -197,7 +197,6 @@
       <div class="col-lg-2 col-3">
         <label for="uniform" class="form-label">スリーブ</label>
         <select class="rounded-0 select-text form-select" id="sleeve" required>
-          <option value="default">スリーブを選択</option>
           <option value="short">ショート</option>
           <option value="long">ロング</option>
         </select>
@@ -275,6 +274,8 @@
             'set': '上下セット /',
             'shirt': 'シャツのみ /',
             'pants': 'パンツのみ /',
+            'short': 'ショート',
+            'long': 'ロング',
             'no-socks': 'ソックスなし',
             'socks': 'ソックスあり',
             'tsuru': 'ツルツル',
@@ -283,8 +284,6 @@
             'round_neck': 'ラウンドネック ＆ スモール',
             'v_sm_neck': 'Vネック ＆ スモール',
             'v_lg_neck': 'Vネック ＆ ラージ',
-            'short': 'ショート',
-            'long': 'ロング',
           };
 
           const change_selected = function(id, selected) {
@@ -343,7 +342,7 @@
 
           $('#sleeve').change(function() {
             sleeve = ($(this).val());
-            change_selected(id='sleeve_selected', selected=sleeve);
+            change_selected(id='sleeve-selected', selected=sleeve);
             checkout();
           });
 
