@@ -271,13 +271,12 @@
           const delivery_cost = 1000;
           const text_dict = {
             'default': '未選択',
-            'set': '上下セット /',
-            'shirt': 'シャツのみ /',
-            'pants': 'パンツのみ /',
+            'set': '上下セット',
+            'shirt': 'シャツのみ',
+            'pants': 'パンツのみ',
             'short': 'ショート',
             'long': 'ロング',
-            'no-socks': 'ソックスなし',
-            'socks': 'ソックスあり',
+            'no-socks': '/ ソックスあり',
             'tsuru': 'ツルツル',
             'zara': 'ザラザラ',
             'round': 'ラウンドネック',
@@ -291,7 +290,8 @@
             $(`#${id}-data`).val(text_dict[selected]) //メール送信用に格納
           };
 
-          change_selected(id='socks-selected', selected='no-socks'); //デフォルトを適用。
+          change_selected(id='socks-selected', selected='no-socks');
+          change_selected(id='sleeve-selected', selected='short'); //デフォルトを適用。
 
           const checkout = function() {  //selectorの値が変わる毎に、.checkoutに代金を反映させる。
             if (number <= 0) {
@@ -513,9 +513,9 @@
       <div class="feedback">
         <p>ユニフォーム <i class="fa-solid fa-angles-right"></i>
           <a href="#uni-selector">
-            <span class="selected-item" id="uni-selected">未選択 /</span>
+            <span class="selected-item" id="uni-selected">未選択</span>
             <input type="hidden" id="uni-selected-data" name="form-uniform">
-            <span class="selected-item" id="socks-selected">未選択</span>
+            <span class="selected-item" id="socks-selected">/ 未選択</span>
             <input type="hidden" id="socks-selected-data" name="form-socks">
           </a>
         </p>
