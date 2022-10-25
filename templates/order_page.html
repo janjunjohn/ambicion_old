@@ -1,4 +1,15 @@
 {% extends 'white_page_base.html' %}
+  {% block OGP %}
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/ fb# prefix属性: http://ogp.me/ns/ prefix属性#">
+    <meta property="og:url" content="https://ambicion-jp.com/order" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="オーダーページ" />
+    <meta property="og:description" content="あなたのデザインをプロクオリティで形にします。昇華式完全オリジナルユニフォーム 上下セット4500円~。" />
+    <meta property="og:site_name" content="AMBICIÓNで唯一無二のオリジナルユニフォームを。" />
+    <meta property="og:image" content="static/images/design_pieces/logo_black.png" />
+    <meta name="twitter:card" content="Summary Card" />
+    <meta name="twitter:site" content="@Ryota410h" />
+  {% endblock OGP %}
 
   {% block heading %}
     {% if submitted: %}

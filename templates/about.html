@@ -1,4 +1,16 @@
 {% extends 'white_page_base.html' %}
+  {% block OGP %}
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/ fb# prefix属性: http://ogp.me/ns/ prefix属性#">
+    <meta property="og:url" content="https://ambicion-jp.com/about" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="アバウトページ" />
+    <meta property="og:description" content="スリランカという縫製が盛んな国と旅するサッカー選手。この出会いが、唯一無二のコストパフォーマンスを実現しました。
+    価格と質。その両方でみなさんを驚かせることができると自負しております。" />
+    <meta property="og:site_name" content="AMBICIÓNとは？" />
+    <meta property="og:image" content="static/images/design_pieces/logo_black.png" />
+    <meta name="twitter:card" content="Summary Card" />
+    <meta name="twitter:site" content="@Ryota410h" />
+  {% endblock OGP %}
 
   {% block heading %}
       <h1 class="heading-text">AMBICIÓNとは？</h1>
