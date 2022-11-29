@@ -38,6 +38,9 @@
     
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+   <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script> 
     
     <title>AMBICIÓN</title>
   </head>
@@ -120,7 +123,7 @@
     <!--  Gallery Section -->
     <section id="gallery-section" class="before-appear">
         <!-- Section Header -->
-        {% if submitted: %}
+        {% if submitted == 'success': %}
             <h1 class="heading-text">
                 メール送信完了。
                 <br>
@@ -128,6 +131,8 @@
                 <br>
                 ありがとうございます！！
             </h1>
+        {% elif submitted == 'failed': %}
+          <h1 class="header">メールの送信に失敗しました。</h1>
         {% else: %}
             <h1 class="header">ユニフォームを作ろう。</h1>
         {% endif %}
@@ -357,11 +362,21 @@
                               name="free-text"
                               placeholder="フリースペース"></textarea>
                 </div>
-                <button class="contact-btn btn btn-primary btn-lg" type="submit">メールを送信</button>
+                <div class="g-recaptcha input-group mx-auto" data-callback="validateRecaptcha" data-sitekey="{{ sitekey }}"></div>
+                <button class="recaptcha contact-btn btn btn-primary btn-lg" type="submit" disabled>メールを送信</button>
             </div>
         </form>
     </section>
 </div>
+
+<script> // reCAPTCHA succeeded, enable submit button
+  function validateRecaptcha ( code ) {
+    if ( !!code ) {
+      var form = document.querySelector(".recaptcha");
+      form.removeAttribute('disabled');
+    }
+  }
+</script>
 
 <!-- Footer -->
 <footer id="footer">
@@ -380,8 +395,8 @@
 
   </footer>
 
-<!-- Animation Controller -->
 <script>
+  //Animation Controlle
   $(window).on('load', function() { // after loading
     var header_height = 23;
     var url_hash = location.hash;
@@ -409,7 +424,21 @@
            $(section).addClass('fadeUp');
          }
        }
-    })
+    });
+
+    //Validation
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.prototype.slice.call(forms)
+    .forEach(form => {
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        form.classList.add('was-validated');
+      }, false);
+    });
   });
 </script>
     <!-- Optional JavaScript; choose one of the two! -->

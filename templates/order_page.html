@@ -13,8 +13,10 @@
   {% endblock OGP %}
 
   {% block heading %}
-    {% if submitted: %}
+    {% if submitted == 'success': %}
       <h1 class="heading-text">メール送信完了。<br>{{ username }}さん、 <br> ありがとうございます！！</h1>
+    {% elif submitted == 'failed': %}
+      <h1 class="header">メールの送信に失敗しました。</h1>
     {% else: %}
       <h1 class="heading-text">あなたのデザインを、<br> プロクオリティで形にします。</h1>
     {% endif %}
@@ -522,7 +524,7 @@
 
       <h2 class="small-header">選んでいただいた内容</h2>
 
-      <form class="needs-validation" action="{{ url_for('order') }}" method="post" novalidate>
+      <form id="order-mail-form" class="needs-validation" action="{{ url_for('order') }}" method="post" novalidate>
       <div class="feedback">
         <p>ユニフォーム <i class="fa-solid fa-angles-right"></i>
           <a href="#uni-selector">
@@ -571,12 +573,19 @@
           <span class="rounded-0 input-group-text"><i class="fa-solid fa-pen-to-square text-light"></i></span>
           <textarea rows="3" maxlength="250" class="form-input rounded-0 form-control" name="free-text" placeholder="フリースペース"></textarea>
         </div>
-
-        <button class="rounded-0 email-submit btn btn-primary btn-lg" type="submit">メールを送信</button>
+        <div class="g-recaptcha input-group mx-auto" data-callback="validateRecaptcha" data-sitekey="{{ sitekey }}"></div>
+        <button class="recaptcha rounded-0 email-submit btn btn-primary btn-lg" type="submit" disabled>メールを送信</button>
       </div>
       </form>
 
     </section>
-
+    <script> // reCAPTCHA succeeded, enable submit button
+      function validateRecaptcha ( code ) {
+        if ( !!code ) {
+          var form = document.querySelector(".recaptcha");
+          form.removeAttribute('disabled');
+        }
+      }
+    </script>
 
 {% endblock %}
