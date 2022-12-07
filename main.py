@@ -11,6 +11,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 RECAPTCHA_SITEKEY = os.environ['RECAPTCHA_SITEKEY']
 RECAPTCHA_SECRET_KEY = os.environ['RECAPTCHA_SECRET_KEY']
 RECAPTCHA_URL = 'https://www.google.com/recaptcha/api/siteverify'
+BLOCK_USERNAME = ['Eric Jones', 'Mike Taft']
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = SECRET_KEY
@@ -42,7 +43,8 @@ def home():
             msg.body = f'お名前: {username} \n' \
                     f'Email: {user_email} \n' \
                     f'備考: {message} \n'
-            mail.send(msg)
+            if not username in BLOCK_USERNAME:
+                mail.send(msg)
             return render_template('index.html', submitted='success', username=username, year=year, sitekey=RECAPTCHA_SITEKEY)
         else:
             return render_template('index.html', submitted='failed', year=year, sitekey=RECAPTCHA_SITEKEY)
