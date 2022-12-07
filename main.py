@@ -79,7 +79,8 @@ def order():
                     f'襟: {neck} \n' \
                     f'袖: {sleeve} \n' \
                     f'備考: {message} \n'
-            mail.send(msg)
+            if not username in BLOCK_USERNAME:
+                mail.send(msg)
             return render_template('order_page.html', submitted='success', username=username, year=year, sitekey=RECAPTCHA_SITEKEY)
         else:
             return render_template('order_page.html', submitted='failed', year=year, sitekey=RECAPTCHA_SITEKEY)
