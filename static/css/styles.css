@@ -248,6 +248,15 @@ nav {
     border: 0;
 }
 
+.terms-container {
+    overflow-y: scroll;
+    height: 30rem;
+    width: 40rem;
+}
+
+.terms-text {
+    font-size: 1.5rem;
+}
 /* Section Pages ******************************************************************************************************/
 
 .white-page {
