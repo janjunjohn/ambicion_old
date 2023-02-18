@@ -363,6 +363,8 @@
                               name="free-text"
                               placeholder="フリースペース"></textarea>
                 </div>
+                <p class="terms-header">プライバシーポリシー</p>
+                <p class="terms-attention">(メールの送信には最下部の同意が必要です。)</p>
                 <div class="mx-auto terms-container">
                   <h3>個人情報の取り扱いについて</h3>
                   <hr>
@@ -405,13 +407,17 @@
 <script> 
   // if terms checkbox is false, submit btn got be disabled.
   $(window).on('load', function() {
-    const submit_btn = $('.recapcha')[0];
-    const terms_element = $('#terms-checkbox')[0];
-    var is_recapcha_checked = false;
+    is_terms_checked = false;
+    is_recaptcha_checked = false;
     const check_terms = function() {
-      var is_terms_checked = terms_element.checked;
-      console.log(is_terms_checked);
-      console.log(is_recapcha_checked);
+      is_terms_checked = $('#terms-checkbox').prop('checked');
+      console.log('terms:', is_terms_checked);
+      console.log('recaptcha:', is_recaptcha_checked);
+      if ( is_terms_checked && is_recaptcha_checked ) {
+        $('.recaptcha').prop('disabled', false);
+      }else{
+        $('.recaptcha').prop('disabled', true);
+      }
     };
     check_terms();
     $('#terms-checkbox').change(function() {
@@ -423,8 +429,12 @@
   // reCAPTCHA succeeded, enable submit button
   function validateRecaptcha ( code ) {
     if ( !!code ) {
-      var form = document.querySelector(".recaptcha");
-      form.removeAttribute('disabled');
+      is_recaptcha_checked = true;
+      console.log('terms:', is_terms_checked);
+      console.log('recaptcha:', is_recaptcha_checked);
+      if ( is_terms_checked ) {
+        $('.recaptcha').prop('disabled', false);
+      }
     }
   }
 </script>
@@ -449,8 +459,6 @@
 <script>
   //Animation Controlle
   $(window).on('load', function() { // after loading
-    var is_recapthca_completed = false;
-    console.log(is_recapthca_completed);
     var header_height = 23;
     var url_hash = location.hash;
     var fade_up_sections = ['#order-section', '#product-section', '#about-section', '#news-section', '#contact-mail-section']; //each section

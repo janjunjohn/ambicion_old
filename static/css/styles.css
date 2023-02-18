@@ -250,8 +250,20 @@ nav {
 
 .terms-container {
     overflow-y: scroll;
-    height: 30rem;
+    height: 20rem;
     width: 40rem;
+}
+
+.terms-header {
+    font-size: 1.7rem;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.terms-attention {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1.7rem;
 }
 
 .terms-text {
