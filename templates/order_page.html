@@ -267,12 +267,12 @@
         <script>
         $(function(){
           var uniform = $('#uniform').val();
+          var sleeve = $('#sleeve').val();
           var socks = $('#socks').val();
           var number = $('#number').val();
           const choices = document.getElementById('choices');
           const fabric_choices = choices.fabric;
           const neck_choices = choices.neck;
-          const sleeve_choices = choices.sleeve;
           const uni_dict = {
             'default': {0: 0, 1: 0, 2: 0},
             'set': {0: 5500, 1: 4500, 2: 4000},
@@ -377,10 +377,8 @@
           $('#choices').change(function() {
             var fabric = fabric_choices.value;
             var neck = neck_choices.value;
-            var sleeve = sleeve_choices.value;
             change_selected(id='fabric-selected', selected=fabric);
             change_selected(id='neck-selected', selected=neck);
-            change_selected(id='sleeve-selected', selected=sleeve);
           });
 
           //Validation
