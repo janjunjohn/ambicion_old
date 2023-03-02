@@ -11,7 +11,6 @@ SECRET_KEY = os.environ['SECRET_KEY']
 RECAPTCHA_SITEKEY = os.environ['RECAPTCHA_SITEKEY']
 RECAPTCHA_SECRET_KEY = os.environ['RECAPTCHA_SECRET_KEY']
 RECAPTCHA_URL = 'https://www.google.com/recaptcha/api/siteverify'
-BLOCK_USERNAME = ['Eric Jones', 'Mike Taft']
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = SECRET_KEY
@@ -43,7 +42,7 @@ def home():
             msg.body = f'お名前: {username} \n' \
                     f'Email: {user_email} \n' \
                     f'備考: {message} \n'
-            if not username in BLOCK_USERNAME:
+            if not 'Mike' in username:
                 mail.send(msg)
             return render_template('index.html', submitted='success', username=username, year=year, sitekey=RECAPTCHA_SITEKEY)
         else:
@@ -79,7 +78,7 @@ def order():
                     f'襟: {neck} \n' \
                     f'袖: {sleeve} \n' \
                     f'備考: {message} \n'
-            if not username in BLOCK_USERNAME:
+            if not 'Mike' in username:
                 mail.send(msg)
             return render_template('order_page.html', submitted='success', username=username, year=year, sitekey=RECAPTCHA_SITEKEY)
         else:
